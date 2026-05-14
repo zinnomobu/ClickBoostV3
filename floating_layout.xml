@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Compact floating widget that sits on top of any app -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!-- Semi-transparent pill container -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="4dp">
+
+        <!-- Close (✕) button — small, top-right -->
+        <TextView
+            android:id="@+id/btnClose"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:text="✕"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:gravity="center"
+            android:background="#CC333333"
+            android:layout_gravity="end"
+            android:layout_marginBottom="2dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Main click target button -->
+        <FrameLayout
+            android:id="@+id/btnClickTarget"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/btn_overlay"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Lightning bolt icon -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚡"
+                    android:textSize="26sp"
+                    android:gravity="center" />
+
+                <!-- Live badge: multiplier × cps -->
+                <TextView
+                    android:id="@+id/tvBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5x\n10cps"
+                    android:textColor="#FFFFFF"
+                    android:textSize="9sp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="-2dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+</FrameLayout>
